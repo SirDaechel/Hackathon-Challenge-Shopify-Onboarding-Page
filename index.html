@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackathon Challenge</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header class="header" role="banner">
+      <nav role="navigation" class="top-nav">
+        <a href="https://www.shopify.com/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <path
+              d="M21.2105 3.80402C21.2105 3.80402 20.8505 3.90683 20.259 4.08675C20.1561 3.75261 20.0018 3.36707 19.7961 2.95583C19.1274 1.67069 18.1245 0.976712 16.9415 0.976712C16.8644 0.976712 16.7872 0.976712 16.6843 1.00241C16.6586 0.951009 16.6072 0.925306 16.5815 0.8739C16.0671 0.308439 15.3985 0.0514104 14.6013 0.0771132C13.0583 0.128519 11.5152 1.23374 10.2808 3.21286C9.40646 4.60081 8.73782 6.3486 8.55781 7.71085C6.78334 8.25061 5.54893 8.63615 5.52321 8.66185C4.62312 8.94458 4.59741 8.97029 4.49454 9.81848C4.34024 10.461 2 28.5815 2 28.5815L21.442 31.9486V3.75262C21.3391 3.77832 21.2619 3.77832 21.2105 3.80402ZM16.7101 5.19197C15.6814 5.50041 14.5498 5.86025 13.444 6.19438C13.7526 4.98635 14.3698 3.77832 15.0899 2.98153C15.3728 2.6988 15.7585 2.36466 16.1957 2.15904C16.6329 3.08434 16.7358 4.34378 16.7101 5.19197ZM14.627 1.10523C14.987 1.10523 15.2956 1.18233 15.5528 1.33655C15.1413 1.54217 14.7299 1.87631 14.3441 2.26185C13.3669 3.31567 12.6211 4.96065 12.3125 6.52852C11.3867 6.81125 10.4609 7.09398 9.6122 7.35101C10.1523 4.90924 12.2353 1.18233 14.627 1.10523ZM11.6181 15.2418C11.721 16.8868 16.0671 17.2466 16.3243 21.1277C16.5043 24.1863 14.7041 26.2683 12.1067 26.4225C8.96928 26.6281 7.24625 24.7775 7.24625 24.7775L7.91488 21.9502C7.91488 21.9502 9.63792 23.261 11.0266 23.1582C11.9267 23.1068 12.261 22.3615 12.2353 21.8474C12.1067 19.6884 8.55781 19.8169 8.32635 16.2699C8.12062 13.3141 10.0751 10.3068 14.3955 10.0241C16.0671 9.92129 16.9158 10.3325 16.9158 10.3325L15.9386 14.0337C15.9386 14.0337 14.8327 13.5197 13.5212 13.6225C11.6181 13.751 11.5924 14.959 11.6181 15.2418ZM17.7387 4.88354C17.7387 4.11245 17.6359 3.00723 17.2758 2.08193C18.4588 2.31326 19.0246 3.6241 19.2817 4.42089C18.8188 4.5494 18.3045 4.70362 17.7387 4.88354Z"
+              fill="white"
+            />
+            <path
+              d="M22.085 31.8458L30.1601 29.841C30.1601 29.841 26.6883 6.3743 26.6626 6.22009C26.6369 6.06587 26.5083 5.96306 26.3797 5.96306C26.2511 5.96306 23.988 5.91165 23.988 5.91165C23.988 5.91165 22.5993 4.57511 22.085 4.06105V31.8458Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+        <span class="search-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12.3226 13.3833C11.3996 14.0841 10.2484 14.5 9 14.5C5.96243 14.5 3.5 12.0376 3.5 9C3.5 5.96243 5.96243 3.5 9 3.5C12.0376 3.5 14.5 5.96243 14.5 9C14.5 10.2484 14.0841 11.3996 13.3833 12.3226L16.2803 15.2197C16.5732 15.5126 16.5732 15.9874 16.2803 16.2803C15.9874 16.5732 15.5126 16.5732 15.2197 16.2803L12.3226 13.3833ZM13 9C13 11.2091 11.2091 13 9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9Z"
+              fill="#B5B5B5"
+            />
+          </svg>
+          <input
+            class="search"
+            type="text"
+            placeholder="Search"
+            aria-label="Search"
+          />
+        </span>
+        <span class="user-bell" role="complementary">
+          <div class="bell-box" aria-label="Notifications">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              class="bell"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.25203 14.4239L4.8061 14.1427C2.95144 13.9295 2.42542 11.4844 4.02838 10.5274L4.0933 10.4886C4.966 9.96761 5.50045 9.02609 5.50045 8.00969V7.5C5.50045 5.01472 7.51517 3 10.0005 3C12.4857 3 14.5005 5.01472 14.5005 7.5V8.00969C14.5005 9.02609 15.0349 9.96761 15.9076 10.4886L15.9725 10.5274C17.5755 11.4844 17.0495 13.9295 15.1948 14.1427L12.652 14.435V14.8C12.652 16.2912 11.4432 17.5 9.95203 17.5C8.46086 17.5 7.25203 16.2912 7.25203 14.8V14.4239ZM11.152 14.5H8.75203V14.8C8.75203 15.4627 9.28929 16 9.95203 16C10.6148 16 11.152 15.4627 11.152 14.8V14.5ZM8.00045 13H12.0005L15.0235 12.6525C15.453 12.6032 15.5748 12.0369 15.2036 11.8153L15.1387 11.7766C15.0591 11.7291 14.9815 11.6793 14.9057 11.6273C14.7506 11.521 14.6036 11.4055 14.4651 11.2818C14.4405 11.2598 14.4162 11.2377 14.3922 11.2152C13.5144 10.395 13.0005 9.23833 13.0005 8.00969V7.5C13.0005 5.84315 11.6573 4.5 10.0005 4.5C8.3436 4.5 7.00045 5.84315 7.00045 7.5V8.00969C7.00045 9.23833 6.48651 10.395 5.60871 11.2152C5.58469 11.2377 5.56039 11.2598 5.53583 11.2818C5.39734 11.4055 5.25029 11.521 5.09523 11.6273C5.01945 11.6793 4.94176 11.7291 4.86222 11.7766L4.79729 11.8153C4.4261 12.0369 4.5479 12.6032 4.97739 12.6525L8.00045 13Z"
+                fill="#E3E3E3"
+              />
+            </svg>
+          </div>
+          <a href="https://admin.shopify.com/">
+            <div class="user" aria-label="User Profile">
+              <p class="user-name">Davii Collections</p>
+              <div class="name-initial-box">
+                <p class="name-initial">DC</p>
+              </div>
+            </div>
+          </a>
+        </span>
+      </nav>
+    </header>
+
+    <main role="main">
+      <section
+        class="select-a-plan"
+        role="region"
+        aria-labelledby="plan-header"
+      >
+        <h2 id="plan-header" class="select-a-plan-txt">
+          Extend your trial for $1/month for 3 months on select plans.
+        </h2>
+        <span class="select-a-plan-cta">
+          <button class="select-a-plan-btn" aria-label="Select a Plan">
+            <a href="https://shopify.com/pricing" class="select-a-plan-btn-txt">
+              Select a plan
+            </a>
+          </button>
+          <div class="select-a-plan-close-box">
+            <span
+              class="select-a-plan-close"
+              role="button"
+              aria-label="Close Plan Selection"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M13.9697 15.0303C14.2626 15.3232 14.7374 15.3232 15.0303 15.0303C15.3232 14.7374 15.3232 14.2626 15.0303 13.9697L11.0607 10L15.0303 6.03033C15.3232 5.73744 15.3232 5.26256 15.0303 4.96967C14.7374 4.67678 14.2626 4.67678 13.9697 4.96967L10 8.93934L6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L8.93934 10L4.96967 13.9697C4.67678 14.2626 4.67678 14.7374 4.96967 15.0303C5.26256 15.3232 5.73744 15.3232 6.03033 15.0303L10 11.0607L13.9697 15.0303Z"
+                  fill="#E3E3E3"
+                />
+              </svg>
+            </span>
+          </div>
+        </span>
+      </section>
+      <article class="step-guide" role="article">
+        <section
+          class="step-guide-header"
+          role="region"
+          aria-labelledby="guide-header"
+        >
+          <div class="step-guide-box">
+            <article>
+              <h2 id="guide-header" class="step-guide-txt">Step guide</h2>
+              <p class="step-guide-sub-txt">
+                Use this personalized guide to get your store up and running.
+              </p>
+            </article>
+            <div class="steps-completed" role="status">
+              <p class="steps-completed-txt">1 / 5 completed</p>
+              <div class="steps-completed-bar-box">
+                <span class="steps-completed-bar"></span>
+              </div>
+            </div>
+          </div>
+          <span class="step-guide-arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M14.5303 12.2803C14.2374 12.5732 13.7626 12.5732 13.4697 12.2803L10 8.81066L6.53033 12.2803C6.23744 12.5732 5.76256 12.5732 5.46967 12.2803C5.17678 11.9874 5.17678 11.5126 5.46967 11.2197L9.46967 7.21967C9.76256 6.92678 10.2374 6.92678 10.5303 7.21967L14.5303 11.2197C14.8232 11.5126 14.8232 11.9874 14.5303 12.2803Z"
+                fill="#4A4A4A"
+              />
+            </svg>
+          </span>
+        </section>
+        <!-- First detail block -->
+        <section
+          class="step-guide-detail"
+          role="region"
+          aria-labelledby="customize-header"
+        >
+          <article class="guide-detail-block">
+            <span class="broken-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="#8A8A8A"
+                  stroke-width="2.08333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="5 5"
+                />
+              </svg>
+            </span>
+            <div class="guide-detail">
+              <h3 id="customize-header" class="active-guide-detail-txt">
+                Customize your online store
+              </h3>
+              <p class="guide-choose-theme">
+                Choose a theme and add your logo, colors, and images to reflect
+                your brand.
+                <a href="#" class="learn-more">Learn more</a>
+              </p>
+              <button class="customize-theme-btn" aria-label="Customize Theme">
+                Customize theme
+              </button>
+            </div>
+          </article>
+          <img
+            class="guide-detail-img"
+            src="https://crushingit.tech/hackathon-assets/customise-store.png"
+            alt="customize-img"
+          />
+        </section>
+        <!-- Second detail block -->
+        <section
+          class="step-guide-detail"
+          role="region"
+          aria-labelledby="add-domain-header"
+        >
+          <article class="guide-detail-block">
+            <span class="broken-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="#8A8A8A"
+                  stroke-width="2.08333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="5 5"
+                />
+              </svg>
+            </span>
+            <div class="guide-detail">
+              <h3 id="add-domain-header" class="guide-detail-txt">
+                Add a custom domain
+              </h3>
+              <p class="guide-choose-theme">
+                Write a description, add photos, and set pricing for the
+                products you plan to sell.
+                <a href="#" class="learn-more">Learn more</a>
+              </p>
+              <div class="guide-detail-cta">
+                <button class="customize-theme-btn" aria-label="Add Product">
+                  Add product
+                </button>
+                <button class="theme-btn" aria-label="Add Product">
+                  Add product
+                </button>
+              </div>
+            </div>
+          </article>
+          <img
+            class="guide-detail-img"
+            src="https://crushingit.tech/hackathon-assets/product.png"
+            alt="product-img"
+          />
+        </section>
+        <!-- Third detail block -->
+        <section
+          class="step-guide-detail"
+          role="region"
+          aria-labelledby="add-domain-header-2"
+        >
+          <article class="guide-detail-block">
+            <span class="broken-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="#8A8A8A"
+                  stroke-width="2.08333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="5 5"
+                />
+              </svg>
+            </span>
+            <div class="guide-detail">
+              <h3 id="add-domain-header-2" class="guide-detail-txt">
+                Add a custom domain
+              </h3>
+              <p class="guide-choose-theme">
+                Your current domain is 222219.myshopify.com but you can add a
+                custom domain to help customers find your online store.
+                <a href="#" class="learn-more">Learn more</a>
+              </p>
+              <button class="customize-theme-btn" aria-label="Add Domain">
+                Add domain
+              </button>
+            </div>
+          </article>
+          <img
+            class="guide-detail-img"
+            src="https://crushingit.tech/hackathon-assets/website.png"
+            alt="customize-img"
+          />
+        </section>
+        <!-- Fourth detail block -->
+        <section
+          class="step-guide-detail"
+          role="region"
+          aria-labelledby="name-store-header"
+        >
+          <article class="guide-detail-block">
+            <span class="broken-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="#8A8A8A"
+                  stroke-width="2.08333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="5 5"
+                />
+              </svg>
+            </span>
+            <div class="guide-detail">
+              <h3 id="name-store-header" class="guide-detail-txt">
+                Name your store
+              </h3>
+              <p class="guide-choose-theme">
+                Your temporary store name is currently Davii collections. The
+                store name appears in your admin and your online store.
+                <a href="#" class="learn-more">Learn more</a>
+              </p>
+              <button class="customize-theme-btn" aria-label="Name Store">
+                Name store
+              </button>
+            </div>
+          </article>
+          <img
+            class="guide-detail-img"
+            src="https://crushingit.tech/hackathon-assets/name-store.png"
+            alt="customize-img"
+          />
+        </section>
+        <!-- Fifth detail block -->
+        <section
+          class="step-guide-detail"
+          role="region"
+          aria-labelledby="set-up-payment-header"
+        >
+          <article class="guide-detail-block">
+            <span class="broken-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="#8A8A8A"
+                  stroke-width="2.08333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-dasharray="5 5"
+                />
+              </svg>
+            </span>
+            <div class="guide-detail">
+              <h3 id="set-up-payment-header" class="guide-detail-txt">
+                Set up a payment provider
+              </h3>
+              <p class="guide-choose-theme">
+                Choose a payment provider to start accepting payments. You’ll
+                need to create an account with the payment provider and set it
+                up with your Shopify store.
+                <a href="#" class="learn-more">Learn more</a>
+              </p>
+              <button class="customize-theme-btn" aria-label="Set Up Payment">
+                Set up payment
+              </button>
+            </div>
+          </article>
+          <img
+            class="guide-detail-img"
+            src="https://crushingit.tech/hackathon-assets/payment.png"
+            alt="customize-img"
+          />
+        </section>
+      </article>
+
+      <section data-modal class="user-dialog">
+        <article class="user-dialog-header">
+          <div class="user-detail">
+            <span class="user-detail-name-box">
+              <span class="user-detail-name-initial-box">
+                <h3 class="user-detail-name-initial">DC</h3>
+              </span>
+              <h3 class="user-detail-name">Davii Collections</h3>
+            </span>
+            <span class="user-detail-arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M13.3332 4L5.99984 11.3333L2.6665 8"
+                  stroke="#303030"
+                  stroke-width="1.33333"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </div>
+        </article>
+        <article class="user-dialog-stores">
+          <span class="user-dialog-stores-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M13.257 3H6.74302C6.35944 3 5.9971 3.17611 5.76012 3.47772L3.37394 6.51468C3.13169 6.823 3 7.20375 3 7.59586V8.25C3 9.31867 3.60958 10.245 4.5 10.7001V15.25C4.5 16.2165 5.2835 17 6.25 17H13.75C14.7165 17 15.5 16.2165 15.5 15.25V10.7001C16.3904 10.245 17 9.31867 17 8.25V7.76879C17 7.26465 16.8307 6.77511 16.5192 6.3787L14.2399 3.47772C14.0029 3.17611 13.6406 3 13.257 3ZM13 15.5H13.75C13.8881 15.5 14 15.3881 14 15.25V11C13.212 11 12.5014 10.6686 12 10.1375C11.4986 10.6686 10.788 11 10 11C9.21199 11 8.50138 10.6686 8 10.1375C7.49862 10.6686 6.78801 11 6 11V15.25C6 15.3881 6.11193 15.5 6.25 15.5H10V13C10 12.4477 10.4477 12 11 12H12C12.5523 12 13 12.4477 13 13V15.5ZM6 9.5H5.75C5.05964 9.5 4.5 8.94036 4.5 8.25V7.59586C4.5 7.53985 4.51881 7.48545 4.55342 7.44141L6.86453 4.5H13.1355L15.3397 7.30543C15.4436 7.43757 15.5 7.60075 15.5 7.76879V8.25C15.5 8.94036 14.9404 9.5 14.25 9.5H14C13.3096 9.5 12.75 8.94036 12.75 8.25V7.75C12.75 7.33579 12.4142 7 12 7C11.5858 7 11.25 7.33579 11.25 7.75V8.25C11.25 8.94036 10.6904 9.5 10 9.5C9.30964 9.5 8.75 8.94036 8.75 8.25V7.75C8.75 7.33579 8.41421 7 8 7C7.58579 7 7.25 7.33579 7.25 7.75V8.25C7.25 8.94036 6.69036 9.5 6 9.5Z"
+                fill="#303030"
+              />
+            </svg>
+          </span>
+          <p class="user-dialog-store-txt">All stores</p>
+        </article>
+        <span class="user-dialog-line"></span>
+        <ul class="user-dialog-nav">
+          <li class="user-dialog-nav-list">
+            <p class="user-dialog-nav-list-txt">Help Center</p>
+          </li>
+          <li class="user-dialog-nav-list">
+            <p class="user-dialog-nav-list-txt">Changelog</p>
+          </li>
+          <li class="user-dialog-nav-list">
+            <p class="user-dialog-nav-list-txt">Community forums</p>
+          </li>
+          <li class="user-dialog-nav-list">
+            <p class="user-dialog-nav-list-txt">Hire a Shopify Partner</p>
+          </li>
+          <li class="user-dialog-nav-list">
+            <p class="user-dialog-nav-list-txt">Keyboard shortcuts</p>
+          </li>
+        </ul>
+        <span class="user-dialog-line"></span>
+        <article class="user-dialog-email-box">
+          <section class="user-dialog-email">
+            <p class="user-dialog-email-name">David Micheal</p>
+            <p class="user-dialog-email-txt">davidmicheal@gmail.com</p>
+          </section>
+          <ul class="user-dialog-nav-2">
+            <li class="user-dialog-nav-list">
+              <p class="user-dialog-nav-list-txt">Manage account</p>
+            </li>
+            <li class="user-dialog-nav-list">
+              <p class="user-dialog-nav-list-txt">Log out</p>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="alert-dialog">
+        <article class="alert-dialog-header">
+          <p class="alert-dialog-header-txt">Alerts</p>
+          <div class="alert-dialog-header-icons">
+            <span class="alert-dialog-header-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z"
+                  fill="#616161"
+                />
+                <path
+                  d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z"
+                  fill="#616161"
+                />
+                <path
+                  d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z"
+                  fill="#616161"
+                />
+              </svg>
+            </span>
+            <span class="alert-dialog-header-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 22 22"
+                fill="none"
+              >
+                <rect
+                  x="0.5"
+                  y="0.5"
+                  width="21"
+                  height="21"
+                  rx="4.5"
+                  stroke="#005BD3"
+                />
+                <path
+                  d="M14.2803 10.0303C14.5732 9.73744 14.5732 9.26256 14.2803 8.96967C13.9874 8.67678 13.5126 8.67678 13.2197 8.96967L10.25 11.9393L9.03033 10.7197C8.73744 10.4268 8.26256 10.4268 7.96967 10.7197C7.67678 11.0126 7.67678 11.4874 7.96967 11.7803L9.71967 13.5303C10.0126 13.8232 10.4874 13.8232 10.7803 13.5303L14.2803 10.0303Z"
+                  fill="#616161"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11ZM16.5 11C16.5 14.0376 14.0376 16.5 11 16.5C7.96243 16.5 5.5 14.0376 5.5 11C5.5 7.96243 7.96243 5.5 11 5.5C14.0376 5.5 16.5 7.96243 16.5 11Z"
+                  fill="#616161"
+                />
+              </svg>
+            </span>
+          </div>
+        </article>
+        <article class="alert-dialog-body">
+          <p class="alert-dialog-body-txt">
+            Alerts about your store and account will show here
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <!-- You can add footer content here -->
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
