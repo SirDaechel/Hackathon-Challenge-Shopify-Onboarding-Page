@@ -8,6 +8,8 @@ const stepGuideData = document.querySelector(".step-guide-data");
 const stepGuideArrow = document.querySelector(".step-guide-arrow");
 const selectPlan = document.querySelector(".select-a-plan");
 const closeSelectPlan = document.querySelector(".select-a-plan-close");
+const stepGuides = document.querySelectorAll(".step-guide-detail");
+const stepTitleTexts = document.querySelectorAll(".guide-title");
 
 alertIcon.addEventListener("click", () => {
   alertBox.classList.toggle("show-alert-dialog");
@@ -32,4 +34,16 @@ stepGuideArrow.addEventListener("click", () => {
 
 closeSelectPlan.addEventListener("click", () => {
   selectPlan.classList.add("select-a-plan-remove");
+});
+
+stepGuides.forEach((guide) => {
+  const stepTitle = guide.querySelector(".guide-title");
+  stepTitle.addEventListener("click", () => {
+    stepGuides.forEach((stepGuide) => {
+      if (stepGuide !== guide) {
+        stepGuide.classList.remove("show-guide");
+      }
+    });
+    guide.classList.add("show-guide");
+  });
 });
