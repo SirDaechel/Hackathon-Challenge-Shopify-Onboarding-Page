@@ -828,6 +828,10 @@ main {
   .guide-detail-img {
     display: none;
   }
+
+  .show-guide .guide-detail-img {
+    display: none;
+  }
 }
 
 /* Screens with width if 768px */
