@@ -16,6 +16,7 @@ const brokenCircle = document.querySelector(".broken-circle-icon");
 const fullCircle = document.querySelector(".full-circle");
 const rotateCircle = document.querySelector(".rotate-circle");
 const checkedIcon = document.querySelector(".checked-icon");
+const progressBar = document.querySelector(".steps-completed-bar");
 
 alertIcon.addEventListener("click", () => {
   alertBox.classList.toggle("show-alert-dialog");
@@ -37,6 +38,20 @@ stepGuideArrow.addEventListener("click", () => {
   stepGuideData.classList.toggle("close-step-guide-data");
   stepGuideArrow.classList.toggle("step-guide-arrow-rotate");
 });
+
+let currentWidthPercentage = 0;
+
+const moveProgressBar = () => {
+  currentWidthPercentage += 20;
+  progressBar.style.width = currentWidthPercentage + "%";
+  console.log(currentWidthPercentage);
+};
+
+const removeProgressBar = () => {
+  currentWidthPercentage -= 20;
+  progressBar.style.width = currentWidthPercentage + "%";
+  console.log(currentWidthPercentage);
+};
 
 closeSelectPlan.addEventListener("click", () => {
   selectPlan.classList.add("select-a-plan-remove");
@@ -71,13 +86,13 @@ checkboxes.forEach((cb) => {
         cbCheckedCircle.style.display = "block";
       }, 200);
       isChecked = true;
+      moveProgressBar();
     } else {
       cbBrokenCircle.style.display = "block";
       cbRotateCircle.classList.remove("show-rotate-circle");
       cbCheckedCircle.style.display = "none";
       isChecked = false;
-      // cbRotateCircle.style.display = "none"; // Reset rotateCircle to be visible
-      // cbFullCircle.style.display = "none";
+      removeProgressBar();
     }
     const parentOfTheParent = cb.parentElement.parentElement;
     if (isChecked) {
@@ -87,29 +102,10 @@ checkboxes.forEach((cb) => {
         }
         parentOfTheParent.classList.add("show-guide");
       });
-      // parentOfTheParent.classList.add("show-guide");
     }
   });
 });
 
-// let isChecked = false;
-// checkbox.addEventListener("click", function () {
-//   if (!isChecked) {
-//     fullCircle.style.display = "none";
-//     brokenCircle.style.display = "none";
-//     rotateCircle.style.display = "block";
-//     rotateCircle.classList.add("show-rotate-circle");
-//     setTimeout(() => {
-//       rotateCircle.style.display = "none";
-//       checkedIcon.style.display = "block";
-//     }, 200);
-//     isChecked = true;
-//   } else {
-//     brokenCircle.style.display = "block";
-//     rotateCircle.classList.remove("show-rotate-circle");
-//     checkedIcon.style.display = "none";
-//     isChecked = false;
-//     rotateCircle.style.display = "none"; // Reset rotateCircle to be visible
-//     fullCircle.style.display = "none";
-//   }
-// });
+// Take a look at the function below, it is used to reduce the width of a line to 0 after 5 clicks but it doesn't get the width of the line to zero after 5 clicks rather it stops at the last significant width.
+
+// Let me explain like this for understanding. The width of the line is a 100% so after 5 clicks on a particular button, I want to take the width to 0% in the sequence of 20%, however, it doesn't get to 0% but stops at 20% even after clicking the decrement button 5 times

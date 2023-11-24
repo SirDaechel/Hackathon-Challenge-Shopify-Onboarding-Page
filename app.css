@@ -330,11 +330,12 @@ main {
 }
 
 .steps-completed-bar {
+  width: 0%;
   display: block;
-  width: 0.9rem;
   height: inherit;
   background: #1a1a1a;
   border-radius: 18%;
+  transition: 0.3s;
 }
 
 .step-guide-arrow {
