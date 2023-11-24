@@ -10,7 +10,12 @@ const selectPlan = document.querySelector(".select-a-plan");
 const closeSelectPlan = document.querySelector(".select-a-plan-close");
 const stepGuides = document.querySelectorAll(".step-guide-detail");
 const stepTitleTexts = document.querySelectorAll(".guide-title");
-const checkBox = document.querySelector(".broken-circle");
+const checkbox = document.querySelector(".checkbox");
+const checkboxes = document.querySelectorAll(".checkbox");
+const brokenCircle = document.querySelector(".broken-circle-icon");
+const fullCircle = document.querySelector(".full-circle");
+const rotateCircle = document.querySelector(".rotate-circle");
+const checkedIcon = document.querySelector(".checked-icon");
 
 alertIcon.addEventListener("click", () => {
   alertBox.classList.toggle("show-alert-dialog");
@@ -49,30 +54,62 @@ stepGuides.forEach((guide) => {
   });
 });
 
-checkBox.addEventListener("mouseover", () => {
-  checkBox.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
+checkboxes.forEach((cb) => {
+  let isChecked = false;
+  const cbBrokenCircle = cb.querySelector(".broken-circle-icon");
+  const cbFullCircle = cb.querySelector(".full-circle");
+  const cbRotateCircle = cb.querySelector(".rotate-circle");
+  const cbCheckedCircle = cb.querySelector(".checked-icon");
+  cb.addEventListener("click", () => {
+    if (!isChecked) {
+      cbFullCircle.style.display = "none";
+      cbBrokenCircle.style.display = "none";
+      cbRotateCircle.style.display = "block";
+      cbRotateCircle.classList.add("show-rotate-circle");
+      setTimeout(() => {
+        cbRotateCircle.style.display = "none";
+        cbCheckedCircle.style.display = "block";
+      }, 200);
+      isChecked = true;
+    } else {
+      cbBrokenCircle.style.display = "block";
+      cbRotateCircle.classList.remove("show-rotate-circle");
+      cbCheckedCircle.style.display = "none";
+      isChecked = false;
+      // cbRotateCircle.style.display = "none"; // Reset rotateCircle to be visible
+      // cbFullCircle.style.display = "none";
+    }
+    const parentOfTheParent = cb.parentElement.parentElement;
+    if (isChecked) {
+      stepGuides.forEach((guide) => {
+        if (parentOfTheParent !== guide) {
+          guide.classList.remove("show-guide");
+        }
+        parentOfTheParent.classList.add("show-guide");
+      });
+      // parentOfTheParent.classList.add("show-guide");
+    }
+  });
 });
 
-checkBox.addEventListener("mouseout", () => {
-  checkBox.innerHTML = `<svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  class="broken-circle-icon"
-                >
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="#8A8A8A"
-                    stroke-width="2.08333"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-dasharray="5 5"
-                  />
-                </svg>`;
-});
+// let isChecked = false;
+// checkbox.addEventListener("click", function () {
+//   if (!isChecked) {
+//     fullCircle.style.display = "none";
+//     brokenCircle.style.display = "none";
+//     rotateCircle.style.display = "block";
+//     rotateCircle.classList.add("show-rotate-circle");
+//     setTimeout(() => {
+//       rotateCircle.style.display = "none";
+//       checkedIcon.style.display = "block";
+//     }, 200);
+//     isChecked = true;
+//   } else {
+//     brokenCircle.style.display = "block";
+//     rotateCircle.classList.remove("show-rotate-circle");
+//     checkedIcon.style.display = "none";
+//     isChecked = false;
+//     rotateCircle.style.display = "none"; // Reset rotateCircle to be visible
+//     fullCircle.style.display = "none";
+//   }
+// });
