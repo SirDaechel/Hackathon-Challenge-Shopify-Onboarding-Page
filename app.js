@@ -17,6 +17,7 @@ const fullCircle = document.querySelector(".full-circle");
 const rotateCircle = document.querySelector(".rotate-circle");
 const checkedIcon = document.querySelector(".checked-icon");
 const progressBar = document.querySelector(".steps-completed-bar");
+const stepsCompletedTxt = document.querySelector(".steps-completed-txt");
 
 alertIcon.addEventListener("click", () => {
   alertBox.classList.toggle("show-alert-dialog");
@@ -39,18 +40,31 @@ stepGuideArrow.addEventListener("click", () => {
   stepGuideArrow.classList.toggle("step-guide-arrow-rotate");
 });
 
+let stepsCompleted = 0;
+let totalSteps = 5;
+
+const incrementStepsCompleted = () => {
+  stepsCompleted += 1;
+  stepsCompletedTxt.textContent =
+    stepsCompleted + " / " + totalSteps + " completed";
+};
+
+const decrementStepsCompleted = () => {
+  stepsCompleted -= 1;
+  stepsCompletedTxt.textContent =
+    stepsCompleted + " / " + totalSteps + " completed";
+};
+
 let currentWidthPercentage = 0;
 
 const moveProgressBar = () => {
   currentWidthPercentage += 20;
   progressBar.style.width = currentWidthPercentage + "%";
-  console.log(currentWidthPercentage);
 };
 
 const removeProgressBar = () => {
   currentWidthPercentage -= 20;
   progressBar.style.width = currentWidthPercentage + "%";
-  console.log(currentWidthPercentage);
 };
 
 closeSelectPlan.addEventListener("click", () => {
@@ -87,12 +101,14 @@ checkboxes.forEach((cb) => {
       }, 200);
       isChecked = true;
       moveProgressBar();
+      incrementStepsCompleted();
     } else {
       cbBrokenCircle.style.display = "block";
       cbRotateCircle.classList.remove("show-rotate-circle");
       cbCheckedCircle.style.display = "none";
       isChecked = false;
       removeProgressBar();
+      decrementStepsCompleted();
     }
     const parentOfTheParent = cb.parentElement.parentElement;
     if (isChecked) {
@@ -105,6 +121,8 @@ checkboxes.forEach((cb) => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", updateCheckedGuidesNumber());
 
 // Take a look at the function below, it is used to reduce the width of a line to 0 after 5 clicks but it doesn't get the width of the line to zero after 5 clicks rather it stops at the last significant width.
 
