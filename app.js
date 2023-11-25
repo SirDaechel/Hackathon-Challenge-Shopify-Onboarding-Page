@@ -121,9 +121,3 @@ checkboxes.forEach((cb) => {
     }
   });
 });
-
-document.addEventListener("DOMContentLoaded", updateCheckedGuidesNumber());
-
-// Take a look at the function below, it is used to reduce the width of a line to 0 after 5 clicks but it doesn't get the width of the line to zero after 5 clicks rather it stops at the last significant width.
-
-// Let me explain like this for understanding. The width of the line is a 100% so after 5 clicks on a particular button, I want to take the width to 0% in the sequence of 20%, however, it doesn't get to 0% but stops at 20% even after clicking the decrement button 5 times
